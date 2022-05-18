@@ -7,6 +7,10 @@ import androidx.annotation.NonNull;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import io.amarcruz.photoview.PhotoViewPackage;
+import io.amarcruz.photoview.PhotoViewPackage;
+import com.image.zoom.ReactImageZoom;
+import io.amarcruz.photoview.PhotoViewPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
