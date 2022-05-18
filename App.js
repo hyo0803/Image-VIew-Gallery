@@ -1,21 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
+import  { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import  HomeScreen  from './components/HomeScreen';
+import  Preview  from './components/Preview';
 
-export default function App() {
+import { createStackNavigator } from '@react-navigation/stack';
+import {  } from 'react-native-safe-area-context';
+
+const Stack = createStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+    <Stack.Navigator initialRouteName="YKGallery">
+      <Stack.Screen 
+      name="HomeScreen" 
+      component={HomeScreen} 
+      options={{
+          headerStyle: {
+            backgroundColor: '#231942',
+          },
+          headerTintColor: "#E0B1CB",
+        }}
+      />
+      <Stack.Screen 
+        name='Preview'
+        component={Preview}
+        options={{
+          headerStyle: {
+            backgroundColor: '#231942',
+          },
+          headerTintColor: "#E0B1CB",
+          headerBackTitle: "Home"
+        }}
+        />
+    </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
