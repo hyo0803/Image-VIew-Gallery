@@ -1,10 +1,10 @@
 {
-  "expo": {
-    "name": "Gallery",
-    "slug": "Gallery",
-    "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
-  }
+    "expo": {
+        "name": "Gallery",
+        "slug": "Gallery",
+        "version": "1.0.0",
+        "assetBundlePatterns": [
+            "**/*"
+        ]
+    }
 }

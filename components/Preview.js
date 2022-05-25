@@ -16,7 +16,7 @@ const {width} = Dimensions.get('window');
 const SPACING = 10;
 const THUMB_SIZE = 80;
 
-const Preview=(props)=> {
+const Preview=({navigation, route})=> {
   const [showComponent, setShowComponent] = useState(false);
   const carouselRef = useRef();
   const flatListRef = useRef();
@@ -27,15 +27,15 @@ const Preview=(props)=> {
       item['image']=img.image;
       return item;
     }));
-  const [indexSelected, setIndexSelected] = useState(props.route.params.key);  
-  props.navigation.setOptions({title: `${ indexSelected+1 } of ${ images.length }`, key: indexSelected});
+  const [indexSelected, setIndexSelected] = useState(route.params.key);  
+  navigation.setOptions({title: `${ indexSelected+1 } of ${ images.length }`, key: indexSelected});
 
   const onSelect = (indexSelected) => {
     flatListRef?.current?.scrollToOffset({
       offset: indexSelected * THUMB_SIZE,
       animated: true,
     });
-  props.navigation.setOptions({title: `${ indexSelected+1 } of ${ images.length }`, key: indexSelected})
+  navigation.setOptions({title: `${ indexSelected+1 } of ${ images.length }`, key: indexSelected})
   setIndexSelected(indexSelected);
   };
 
@@ -62,7 +62,7 @@ const Preview=(props)=> {
               data={images}
               sliderWidth={width}
               itemWidth={width}
-              navigation={props.navigation}
+              navigation={navigation}
               firstItem={indexSelected}
               onSnapToItem={(index) => onSelect(index)}
               renderItem={({item, index}) => (

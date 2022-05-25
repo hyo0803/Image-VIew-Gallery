@@ -7,7 +7,7 @@ import { IMAGES } from '../Routes';
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
 
-const HomeSreen =(props)=> {
+const HomeSreen =({navigation})=> {
     return (
         <ScrollView> 
     <SafeAreaView
@@ -21,7 +21,7 @@ const HomeSreen =(props)=> {
             IMAGES.map((img, index)=>(
                 <TouchableOpacity
                     key={index}
-                    onPress={() => props.navigation.navigate('Preview',{
+                    onPress={() => navigation.navigate('Preview',{
                         url: img.image,
                         key: index
                     })}
